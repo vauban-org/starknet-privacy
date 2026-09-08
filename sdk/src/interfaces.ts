@@ -288,7 +288,7 @@ export type AutoDiscoveryOptions = {
  * - 'all': Select all notes (requires surplus handling)
  * - 'naive': Select first notes until balance is non negative (may create surplus)
  */
-export type AutoSelectionStrategy = "all" | "naive" /*| "exact"*/; //
+export type AutoSelectionStrategy = "all" | "naive"; /*| "exact"*/ //
 
 /**
  * Registry holding the user's private state: channels and notes.
@@ -555,8 +555,7 @@ export interface SubAccountsBuilder {
  * Output specification for transfer/withdraw operations
  */
 export type TransferOutput = { recipient: StarknetAddress } & (
-  | { amount: Amount }
-  | { amount: Open }
+  { amount: Amount } | { amount: Open }
 );
 export type WithdrawOutput = { recipient?: StarknetAddress; amount: Amount };
 export type DepositInput = { recipient?: StarknetAddress; amount: Amount };

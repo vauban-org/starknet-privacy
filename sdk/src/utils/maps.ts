@@ -164,9 +164,7 @@ export class BigNumberishMap<V> extends AdvancedMap<BigNumberish, V, bigint> {
 
   constructor(
     entriesOrDefaultFactory?:
-      | ((key: BigNumberish) => V)
-      | Iterable<readonly [BigNumberish, V]>
-      | null,
+      ((key: BigNumberish) => V) | Iterable<readonly [BigNumberish, V]> | null,
     defaultFactory?: (key: BigNumberish) => V
   ) {
     let initialEntries: Iterable<readonly [BigNumberish, V]> | null = null;
